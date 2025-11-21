@@ -1,29 +1,33 @@
 import { Heart, Github, Linkedin, Mail } from 'lucide-react';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
   const quickLinks = [
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
   ];
+
   const socialLinks = [
     {
       name: 'GitHub',
-      href: 'https://github.com/sruthi', 
+      href: 'https://github.com/sruthi172630',
       icon: <Github className="h-5 w-5" />
     },
     {
       name: 'LinkedIn',
-      href: 'https://linkedin.com/in/sruthi', 
+      href: 'https://www.linkedin.com/in/sruthi-kucharlapati-8a309427b/',
       icon: <Linkedin className="h-5 w-5" />
     },
     {
       name: 'Email',
-      href: 'mailto:kucharlapatisaisruthi@gmail.com', 
+      href: 'mailto:kucharlapatisaisruthi@gmail.com',
       icon: <Mail className="h-5 w-5" />
     }
   ];
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId.replace('#', ''));
     if (element) {
@@ -45,43 +49,46 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-2 text-gray-300">
               <span>Made with</span>
-              <Heart className="h-4 w-4 text-red-500 fill-current" /> 
+              <Heart className="h-4 w-4 text-red-500 fill-current" />
               <span>using React & JavaScript</span>
             </div>
           </div>
+
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
+              {quickLinks.map(({name, href}) => (
+                <li key={name}>
                   <button
-                    onClick={() => scrollToSection(link.href)}
+                    onClick={() => scrollToSection(href)}
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
-                    {link.name}
+                    {name}
                   </button>
                 </li>
               ))}
             </ul>
           </div>
+
           <div>
             <h4 className="text-lg font-semibold mb-4">Connect</h4>
             <div className="space-y-3">
-              {socialLinks.map((social) => (
+              {socialLinks.map(({name, href, icon}) => (
                 <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors duration-200"
                 >
-                  {social.icon}
-                  <span>{social.name}</span>
+                  {icon}
+                  <span>{name}</span>
                 </a>
               ))}
             </div>
           </div>
         </div>
+
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">

@@ -64,7 +64,7 @@ const ContactSection = () => {
       await new Promise(resolve => setTimeout(resolve, 1500));
       alert("Message Sent!");
       setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
+    } catch {
       alert("Failed to send message.");
     } finally {
       setIsSubmitting(false);
@@ -86,9 +86,9 @@ const ContactSection = () => {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
               <div className="space-y-4">
-                {contactInfo.map((info, index) => (
+                {contactInfo.map((info, i) => (
                   <a
-                    key={index}
+                    key={i}
                     href={info.href}
                     target={info.href.startsWith('http') ? '_blank' : undefined}
                     rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
@@ -111,9 +111,9 @@ const ContactSection = () => {
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Connect With Me</h3>
               <div className="flex flex-wrap gap-4">
-                {socialLinks.map((social, index) => (
+                {socialLinks.map((social, i) => (
                   <a
-                    key={index}
+                    key={i}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -129,10 +129,10 @@ const ContactSection = () => {
             <div className="bg-white rounded-lg shadow p-6">
               <h4 className="text-xl font-bold text-gray-900 mb-4">Let's Collaborate</h4>
               <div className="space-y-3 text-gray-600">
-                <p className="flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full"></span>Open to internship opportunities</p>
-                <p className="flex items-center gap-2"><span className="w-2 h-2 bg-blue-500 rounded-full"></span>Available for freelance projects</p>
-                <p className="flex items-center gap-2"><span className="w-2 h-2 bg-purple-500 rounded-full"></span>Interested in AI/ML collaborations</p>
-                <p className="flex items-center gap-2"><span className="w-2 h-2 bg-orange-500 rounded-full"></span>Open to mentorship opportunities</p>
+                <p className="flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full" />Open to internship opportunities</p>
+                <p className="flex items-center gap-2"><span className="w-2 h-2 bg-blue-500 rounded-full" />Available for freelance projects</p>
+                <p className="flex items-center gap-2"><span className="w-2 h-2 bg-purple-500 rounded-full" />Interested in AI/ML collaborations</p>
+                <p className="flex items-center gap-2"><span className="w-2 h-2 bg-orange-500 rounded-full" />Open to mentorship opportunities</p>
               </div>
             </div>
           </div>
@@ -213,7 +213,7 @@ const ContactSection = () => {
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="animate-spin h-4 w-4 border-b-2 border-white rounded-full"></div>
+                      <div className="animate-spin h-4 w-4 border-b-2 border-white rounded-full" />
                       Sending...
                     </>
                   ) : (

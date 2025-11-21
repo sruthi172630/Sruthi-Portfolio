@@ -10,7 +10,7 @@ const ProjectsSection = () => {
       description: "An innovative IoT device that monitors plant health using AI algorithms to provide real-time insights and recommendations for optimal plant care.",
       achievements: [
         "85% accuracy in plant health prediction",
-        "Patent pending technology",
+        "Patent having technology",
         "Real-time monitoring system"
       ],
       technologies: ["Python", "IoT", "Machine Learning", "Sensors", "AI"],
@@ -20,11 +20,11 @@ const ProjectsSection = () => {
         "Mobile app integration",
         "Automated watering system"
       ],
-      icon: <Shield className="h-6 w-6" />, 
+      icon: <Shield className="h-6 w-6" />,
       status: "Patented"
     },
     {
-      title: "Data Dashboard",
+      title: "Data Visualization Dashboard",
       category: "Full-Stack Development",
       description: "A comprehensive full-stack data visualization dashboard with secure authentication and real-time analytics capabilities.",
       achievements: [
@@ -40,7 +40,7 @@ const ProjectsSection = () => {
         "Export functionality"
       ],
       icon: <BarChart3 className="h-6 w-6" />,
-      color: "bg-blue-500", 
+      color: "bg-blue-500",
       status: "Completed"
     }
   ];
@@ -52,7 +52,7 @@ const ProjectsSection = () => {
 
   const handleGithubClick = (projectTitle) => {
     console.log(`Opening GitHub repo for ${projectTitle}`);
-     alert(`GitHub repo for "${projectTitle}" not available in this example.`);
+    alert(`GitHub repo for "${projectTitle}" not available in this example.`);
   };
 
   return (
@@ -66,36 +66,32 @@ const ProjectsSection = () => {
         </div>
         <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="tech-card group"> 
+            <Card key={index} className="tech-card group">
               <CardContent className="p-8">
                 <div className="flex items-center justify-between mb-6">
-                  <div className={`p-3 rounded-lg ${project.color ?? ''} bg-opacity-10 group-hover:bg-opacity-20 transition-all`}>
+                  <div
+                    className={`p-3 rounded-lg ${project.color ?? ''} bg-opacity-10 group-hover:bg-opacity-20 transition-all`}
+                  >
                     <div className={`${project.color ? project.color.replace('bg-', 'text-') : 'text-gray-500'}`}>
                       {project.icon}
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                      project.status === 'Patented'
-                        ? 'bg-yellow-100 text-yellow-800'
-                        : 'bg-green-100 text-green-800'
-                    }`}>
+                    <span
+                      className={`px-3 py-1 text-xs font-medium rounded-full ${
+                        project.status === 'Patented'
+                          ? 'bg-yellow-100 text-yellow-800'
+                          : 'bg-green-100 text-green-800'
+                      }`}
+                    >
                       {project.status}
                     </span>
-                    {project.status === 'Patented' && (
-                      <Award className="h-4 w-4 text-yellow-500" />
-                    )}
+                    {project.status === 'Patented' && <Award className="h-4 w-4 text-yellow-500" />}
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-blue-600 font-semibold mb-4">
-                  {project.category}
-                </p>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {project.description}
-                </p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{project.title}</h3>
+                <p className="text-blue-600 font-semibold mb-4">{project.category}</p>
+                <p className="text-gray-600 mb-6 leading-relaxed">{project.description}</p>
                 <div className="mb-6">
                   <h4 className="text-lg font-semibold text-gray-900 mb-3">Key Achievements</h4>
                   <ul className="space-y-2">
@@ -122,10 +118,7 @@ const ProjectsSection = () => {
                   <h4 className="text-lg font-semibold text-gray-900 mb-3">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
-                      >
+                      <span key={i} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
                         {tech}
                       </span>
                     ))}
@@ -139,11 +132,7 @@ const ProjectsSection = () => {
                     <ExternalLink className="mr-2 h-4 w-4" />
                     Live Demo
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="flex-1"
-                    onClick={() => handleGithubClick(project.title)}
-                  >
+                  <Button variant="outline" className="flex-1" onClick={() => handleGithubClick(project.title)}>
                     <Github className="mr-2 h-4 w-4" />
                     GitHub
                   </Button>
