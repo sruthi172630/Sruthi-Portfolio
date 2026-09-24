@@ -9,7 +9,7 @@ const ContactSection = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   const contactInfo = [
     {
       icon: <Mail className="h-6 w-6" />,
@@ -37,7 +37,7 @@ const ContactSection = () => {
     {
       name: "GitHub",
       icon: <Github className="h-6 w-6" />,
-      href: "https://github.com/sruthi172630",
+      href: "https://github.com/sruthi",
       color: "bg-gray-800"
     }
   ];
@@ -85,8 +85,7 @@ const ContactSection = () => {
                     href={info.href}
                     target={info.href.startsWith('http') ? '_blank' : undefined}
                     rel={info.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all group"
-                  >
+                    className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-all group">
                     <div className={`p-3 rounded-lg ${info.color} bg-opacity-10 group-hover:bg-opacity-20`}>
                       <div className={`${info.color.replace('bg-', 'text-')}`}>
                         {info.icon}

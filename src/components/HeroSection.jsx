@@ -88,7 +88,7 @@ const HeroSection = () => {
                 className="border-gray-200 bg-gray-100 text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2 text-sm transition-all"
               >
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/yuva-sai-sruthi-kucharlapati-8a309427b/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center"
@@ -105,7 +105,7 @@ const HeroSection = () => {
                 className="border-gray-200 bg-gray-100 text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2 text-sm transition-all"
               >
                 <a
-                  href="https://github.com"
+                  href="https://github.com/sruthi172630"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center"
